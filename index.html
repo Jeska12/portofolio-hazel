@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio Hazel Muhammad Arvin Al Fawwaz, mahasiswa Teknik Informatika Universitas Negeri Surabaya.">
+  <title>Hazel Arvin | Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #111a2e;
+      --panel2: #151f36;
+      --text: #f4f7ff;
+      --muted: #aab5ca;
+      --accent: #79e0c3;
+      --accent2: #8da8ff;
+      --line: rgba(255,255,255,.12);
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(ellipse at 85% 0%, rgba(93,120,255,.15), transparent 35%), var(--bg);
+      color: var(--text); line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(16px); background: rgba(11,16,32,.82); border-bottom: 1px solid var(--line); }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 850; letter-spacing: -.04em; font-size: 1.12rem; }
+    .brand span { color: var(--accent); }
+    .navlinks { display: flex; gap: 24px; align-items: center; color: var(--muted); font-size: .92rem; }
+    .navlinks a:hover, .navlinks a:focus { color: var(--accent); }
+    .menu { display: none; background: transparent; color: var(--text); border: 1px solid var(--line); padding: 8px 12px; border-radius: 10px; }
+    section { padding: 88px 0; scroll-margin-top: 70px; }
+    .hero { min-height: 80vh; display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: 55px; padding-top: 70px; }
+    .eyebrow { display: inline-flex; gap: 10px; align-items: center; color: var(--accent); font-size: .82rem; text-transform: uppercase; letter-spacing: .16em; font-weight: 800; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 18px var(--accent); }
+    h1 { font-size: clamp(2.65rem, 6vw, 5.2rem); letter-spacing: -.065em; line-height: 1.04; margin: 22px 0; }
+    h1 em { font-style: normal; color: var(--accent); }
+    .lead { color: var(--muted); max-width: 650px; font-size: 1.08rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 9px; border-radius: 12px; padding: 12px 18px; font-weight: 750; border: 1px solid var(--line); transition: transform .2s, background .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn.primary { background: var(--accent); color: #08151b; border-color: var(--accent); }
+    .hero-card { padding: 28px; border: 1px solid var(--line); border-radius: 28px; background: linear-gradient(145deg, rgba(121,224,195,.12), rgba(141,168,255,.08)); position: relative; overflow: hidden; }
+    .hero-card:before { content: ""; position: absolute; width: 190px; height: 190px; border-radius: 50%; border: 1px solid rgba(121,224,195,.25); top: -75px; right: -70px; box-shadow: 0 0 0 22px rgba(121,224,195,.03), 0 0 0 48px rgba(121,224,195,.025); }
+    .avatar { width: 90px; height: 90px; border-radius: 24px; display: grid; place-items: center; background: var(--accent); color: #08151b; font-size: 2rem; font-weight: 900; letter-spacing: -.06em; margin-bottom: 22px; }
+    .hero-card h2 { margin: 0; font-size: 1.45rem; }
+    .hero-card p { color: var(--muted); margin: 6px 0 22px; }
+    .mini-info { display: grid; gap: 12px; border-top: 1px solid var(--line); padding-top: 18px; }
+    .mini-info div { display: flex; justify-content: space-between; gap: 14px; font-size: .92rem; }
+    .mini-info span:first-child { color: var(--muted); }
+    .section-head { max-width: 700px; margin-bottom: 32px; }
+    .kicker { color: var(--accent); text-transform: uppercase; font-size: .8rem; font-weight: 800; letter-spacing: .16em; }
+    h2.section-title { font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.12; letter-spacing: -.05em; margin: 10px 0 14px; }
+    .section-head p, .muted { color: var(--muted); }
+    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 22px; }
+    .panel { border: 1px solid var(--line); background: var(--panel); padding: 26px; border-radius: 20px; }
+    .panel h3 { margin: 0 0 12px; font-size: 1.1rem; }
+    .education { display: grid; gap: 0; }
+    .edu-item { padding: 15px 0; border-bottom: 1px solid var(--line); }
+    .edu-item:last-child { border-bottom: 0; padding-bottom: 0; }
+    .edu-item:first-child { padding-top: 0; }
+    .edu-item strong { display: block; }
+    .edu-item span { color: var(--muted); font-size: .92rem; }
+    .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .skill { background: var(--panel); border: 1px solid var(--line); padding: 22px; border-radius: 18px; min-height: 155px; }
+    .skill .icon { font-size: 1.5rem; margin-bottom: 12px; }
+    .skill h3 { margin: 0 0 7px; font-size: 1rem; }
+    .skill p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .tag { border: 1px solid var(--line); color: #dce5f8; background: var(--panel2); padding: 6px 11px; border-radius: 999px; font-size: .84rem; }
+    .timeline { border-left: 1px solid rgba(121,224,195,.45); margin-left: 8px; padding-left: 24px; }
+    .timeline-item { position: relative; padding: 0 0 22px; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item:before { content: ""; width: 10px; height: 10px; border-radius: 50%; position: absolute; left: -30px; top: 8px; background: var(--accent); }
+    .timeline-item .date { color: var(--accent); font-size: .85rem; font-weight: 800; }
+    .timeline-item h3 { margin: 5px 0; }
+    .timeline-item p { margin: 0; color: var(--muted); }
+    .achievement-note { border: 1px dashed rgba(121,224,195,.4); background: rgba(121,224,195,.045); padding: 24px; border-radius: 18px; color: var(--muted); }
+    .contact-box { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; align-items: center; padding: clamp(25px, 5vw, 48px); border-radius: 26px; border: 1px solid var(--line); background: linear-gradient(120deg, rgba(121,224,195,.12), rgba(141,168,255,.10)); }
+    .contact-links { display: grid; gap: 12px; }
+    .contact-link { padding: 13px 15px; border-radius: 12px; border: 1px solid var(--line); background: rgba(11,16,32,.4); overflow-wrap: anywhere; }
+    .contact-link small { display: block; color: var(--muted); }
+    footer { padding: 25px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 30px, var(--max)); }
+      .menu { display: inline-flex; }
+      .navlinks { display: none; position: absolute; top: 72px; left: 0; right: 0; padding: 18px 20px; background: #0b1020; border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; }
+      .navlinks.open { display: flex; }
+      .hero, .about-grid, .contact-box { grid-template-columns: 1fr; }
+      .hero { min-height: auto; gap: 30px; padding-top: 65px; }
+      section { padding: 65px 0; }
+      .skill-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 460px) { .skill-grid { grid-template-columns: 1fr; } h1 { font-size: 2.7rem; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Navigasi utama">
+      <a class="brand" href="#home">hazel<span>.</span></a>
+      <button class="menu" id="menuButton" aria-label="Buka menu" aria-expanded="false">Menu ☰</button>
+      <div class="navlinks" id="navlinks">
+        <a href="#about">About</a>
+        <a href="#skills">What I Can Do</a>
+        <a href="#experience">Experience</a>
+        <a href="#achievement">Achievement</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Informatics Student · UNESA</div>
+        <h1>Hi, I'm<br><em>Hazel Arvin.</em></h1>
+        <p class="lead">Mahasiswa Teknik Informatika yang tertarik pada pemrograman, pengembangan perangkat lunak, dan pemanfaatan teknologi untuk menyelesaikan masalah. Saya terus belajar, berkembang, dan membangun kemampuan untuk menjadi software developer.</p>
+        <div class="actions">
+          <a class="btn primary" href="#contact">Hubungi Saya ↗</a>
+          <a class="btn" href="#about">Kenali Saya ↓</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Ringkasan profil">
+        <div class="avatar">HA</div>
+        <h2>Hazel Muhammad<br>Arvin Al Fawwaz</h2>
+        <p>Mahasiswa S1 Teknik Informatika</p>
+        <div class="mini-info">
+          <div><span>Universitas</span><strong>UNESA</strong></div>
+          <div><span>Fokus</span><strong>Software Development</strong></div>
+          <div><span>Bahasa</span><strong>Indonesia · English</strong></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">About Me</div>
+          <h2 class="section-title">Sedang belajar hari ini,<br>berkembang untuk masa depan.</h2>
+          <p>Saya memiliki minat besar di bidang teknologi informasi dan semangat untuk terus mempelajari hal baru. Saya senang mengembangkan cara berpikir analitis, memecahkan masalah, serta bekerja sama untuk mencapai tujuan bersama.</p>
+        </div>
+        <div class="about-grid">
+          <article class="panel">
+            <h3>Profil Singkat</h3>
+            <p class="muted">Sebagai mahasiswa Teknik Informatika, saya ingin membangun fondasi yang kuat dalam pemrograman dan pengembangan perangkat lunak. Saya juga berusaha meningkatkan kemampuan komunikasi, berpikir kritis, dan beradaptasi dengan perkembangan teknologi.</p>
+            <div class="tags">
+              <span class="tag">Problem Solving</span><span class="tag">Analytical Thinking</span><span class="tag">Teamwork</span><span class="tag">English</span>
+            </div>
+          </article>
+          <article class="panel">
+            <h3>Pendidikan</h3>
+            <div class="education">
+              <div class="edu-item"><strong>S1 Teknik Informatika</strong><span>Universitas Negeri Surabaya</span></div>
+              <div class="edu-item"><strong>MAN 2 Kota Kediri</strong><span>Pendidikan menengah</span></div>
+              <div class="edu-item"><strong>MTsN 2 Kota Kediri</strong><span>Pendidikan menengah pertama</span></div>
+              <div class="edu-item"><strong>SD Plus Rahmat</strong><span>Pendidikan dasar</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">What I Can Do</div>
+          <h2 class="section-title">Kemampuan yang terus saya kembangkan.</h2>
+          <p>Berikut kemampuan utama yang tercantum dalam CV saya dan menjadi bekal untuk berkembang di bidang teknologi.</p>
+        </div>
+        <div class="skill-grid">
+          <article class="skill"><div class="icon">🌐</div><h3>English Communication</h3><p>Menggunakan bahasa Inggris dengan lancar untuk komunikasi dan belajar.</p></article>
+          <article class="skill"><div class="icon">🧠</div><h3>Analytical Thinking</h3><p>Menganalisis informasi dan memahami masalah secara terstruktur.</p></article>
+          <article class="skill"><div class="icon">🧩</div><h3>Problem Solving</h3><p>Mencari solusi dengan mempertimbangkan masalah dan kebutuhan.</p></article>
+          <article class="skill"><div class="icon">🔄</div><h3>Adaptability</h3><p>Siap belajar hal baru dan menyesuaikan diri dengan situasi berbeda.</p></article>
+          <article class="skill"><div class="icon">🤝</div><h3>Teamwork</h3><p>Berkolaborasi dan berbagi tanggung jawab untuk mencapai tujuan.</p></article>
+          <article class="skill"><div class="icon">💬</div><h3>Communication</h3><p>Menyampaikan ide dan bekerja sama dengan orang lain.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Experience</div>
+          <h2 class="section-title">Pengalaman yang membentuk saya.</h2>
+          <p>Pengalaman organisasi membantu saya belajar berkomunikasi, bekerja dalam tim, dan menghadapi tantangan.</p>
+        </div>
+        <div class="panel">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="date">2023 — 2025</div>
+              <h3>Kewirausahaan · MAN 2 Kota Kediri</h3>
+              <p>Mendapat pengalaman berwirausaha di lingkungan sekolah, bekerja sama dalam tim, berkomunikasi, dan ikut menyelesaikan masalah.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievement">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Achievement</div>
+          <h2 class="section-title">Terus bertumbuh dan membangun pengalaman.</h2>
+          <p>Saya percaya bahwa proses belajar dan pengalaman sehari-hari merupakan bagian penting dari perkembangan diri.</p>
+        </div>
+        <div class="achievement-note">
+          Belum ada penghargaan atau sertifikat yang dicantumkan di CV. Bagian ini bisa diperbarui nanti dengan prestasi, sertifikat, proyek, atau dokumentasi yang benar-benar pernah diraih.
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-box">
+          <div>
+            <div class="kicker">Contact</div>
+            <h2 class="section-title">Punya ide atau ingin terhubung?</h2>
+            <p class="muted">Silakan hubungi saya melalui email atau WhatsApp. Saya terbuka untuk berdiskusi, belajar, dan berkolaborasi.</p>
+            <a class="btn primary" href="mailto:arvinhazel64@gmail.com">Kirim Email ↗</a>
+          </div>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:arvinhazel64@gmail.com"><small>Email</small>arvinhazel64@gmail.com</a>
+            <a class="contact-link" href="https://wa.me/6285708709474" target="_blank" rel="noopener noreferrer"><small>WhatsApp</small>0857-0870-9474</a>
+            <div class="contact-link"><small>GitHub / LinkedIn</small>Tambahkan tautan profil jika sudah tersedia.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><span>© <span id="year"></span> Hazel Arvin</span><span>Dibuat dengan semangat belajar dan berkembang.</span></div>
+  </footer>
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const navlinks = document.getElementById('navlinks');
+    menuButton.addEventListener('click', () => {
+      const isOpen = navlinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+    });
+    navlinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navlinks.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
